@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>404</title>
+
+    <script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}js/plax.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.nest').plaxify({"xRange":15,"yRange":15});
+        $('.sparrow_02').plaxify({"xRange":25,"yRange":15});
+        $('.sparrow_01').plaxify({"xRange":50,"yRange":20});
+        $('.sparrow_404').plaxify({"xRange":20,"yRange":10,"invert":true});
+        $('.box').plaxify({"xRange":10,"yRange":5,"invert":true});
+        $.plax.enable();
+      });
+    </script>
+
+    <link rel="stylesheet" href="{{STATIC_URL}}css/style.css" type="text/css" media="screen" />
+
+    <style type="text/css" media="screen">
+      body {
+          background-color: #388326;
+          margin: 0;
+      }
+
+      .box h1 {
+          color: #111;
+          font-size: 3em;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+      }
+
+      .box p {
+          margin: 5px 0px;
+      }
+
+      .box {
+          background-color: white;
+          padding: 5px;
+          display: inline-block;
+          border-radius: 10px;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+      }
+
+      .sky {
+          position: absolute;
+          top: 0px;
+          width: 100%;
+          height: 400px;;
+          z-index: -1;
+          background-color: #58C4F5;
+      }
+
+      .sparrow_404 {
+          position: absolute;
+          left: 50%;
+          top: 100px;
+      }
+
+      .sparrow_01 {
+          position:absolute;
+          left: 100px;
+          top: 405px;
+      }
+
+      .sparrow_02 {
+          position:absolute;
+          left: 600px;
+          top: 450px;
+      }
+
+      .nest {
+          position:absolute;
+          left: 350px;
+          top: 450px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <span class="box">
+      <h1>404</h1>
+      <p>Sparvarna letade överallt men hittade inte sidan.</p>
+    </span>
+
+    <img src="{{STATIC_URL}}img/sparrow_01.png" class="sparrow_01" alt="Sparrow" />
+    <img src="{{STATIC_URL}}img/sparrow_02.png" class="sparrow_02" alt="Sparrow" />
+    <img src="{{STATIC_URL}}img/nest.png" class="nest" alt="Bird nest" />
+    <img src="{{STATIC_URL}}img/sparrows_404.png" class="sparrow_404" alt="Sparrows with a 404 sign" />
+
+    <div class="sky">
+      &nbsp;
+    </div>
+  </body>
+
+</html>
+
+{% comment %}
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}
+{% trans "Page not found" %}
+{% endblock %}
+
+{% block main %}
+{% trans "The page you requested does not exist." %}
+{% endblock %}
+{% endcomment %}

@@ -1,0 +1,13 @@
+{% load i18n mezzanine_tags %}
+
+{% if request.user.is_staff %}
+<link rel="stylesheet" href="{{ STATIC_URL }}mezzanine/css/editable.css">
+{{ richtext_media|safe }}
+<script>
+window.__filebrowser_url = '{% try_url "fb_browse" %}';
+window.__toolbar_html = '{{ toolbar|escapejs }}';
+</script>
+<script src="{{ STATIC_URL }}mezzanine/js/jquery.tools.js"></script>
+<script src="{{ STATIC_URL }}mezzanine/js/jquery.form.js"></script>
+<script src="{{ STATIC_URL }}mezzanine/js/editable.js"></script>
+{% endif %}
