@@ -7,8 +7,11 @@ h6 a {color:#666;}
 .middle h6 {line-height:100%; margin:10px 0 15px 0;}
 .right h6 {margin-top:10px;}
 .panel {
-    /*background:rgba(220,220,220, 0.1); padding:10px 20px; margin-bottom:20px;
-        line-height:170%; border:1px solid #eee; border-radius:5px; */}
+    background:rgba(220,220,220, 0.1); padding:10px 20px; margin-bottom:20px;
+    line-height:170%; border:1px solid #eee; border-radius:5px;}
+.middle{
+    padding: 10px 0 0 0;
+}
 p, ul {line-height:22px; margin-top:5px; margin-bottom:15px;}
 li {line-height:20px;}
 /*img {box-shadow:0 0 10px #bbb;}*/

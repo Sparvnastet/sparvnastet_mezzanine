@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load i18n blog_tags mezzanine_tags pages_tags %}
+{% block main %}
+
+    <div id="firstpage-padded">
+    <h2>{{ blog_post.title }}</h2>
+    <hr/>
+    {% if blog_post.featured_image %}
+        <p><img src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}"></p>
+    {% endif %}
+
+    {% editable blog_post.content %}
+    {{ blog_post.content|richtext_filter|safe }}
+    {% endeditable %}
+    </div>
+
+{% endblock %}
+
+{% block right_panel %}
+    {% if about %}
+    <h4>{{ about.title }}</h4>
+    {{ about.description|safe }}
+    {% endif %}
+{% endblock %}
+

@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P),sans-serif;
 body{
     margin: 0;
     padding: 0;    
@@ -12,8 +13,8 @@ img#background-image{
     left: 0;
     z-index: -5;
 }
-h1 {
-    font-family: 'Press Start 2P';
+h1,h2,h3,h4 {
+    font-family: 'Press Start 2P', sans-serif;
     color: #303030;
 }
 #wrapper{
@@ -24,6 +25,27 @@ h1 {
     width: 300px;
     float: left;
 }
+/**
+** Overriding bootstrap.responsive.css
+**/
+.page-content .row{
+    background: #000;
+}
+
+
+.span3{
+    background: #fff;
+}
+
+.span7{
+    background: #fff;
+}
+
+#firstpage-padded{
+    padding:  16px;
+}
+
+
 #content{
     max-width: 940px;
     background: #fff;
