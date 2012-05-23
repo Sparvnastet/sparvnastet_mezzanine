@@ -19,7 +19,7 @@
 {% block right_panel %}
     {% if about %}
     <h4>{{ about.title }}</h4>
-    {{ about.description|safe }}
+    {{ about.description|richtext|safe }}
     {% endif %}
 {% endblock %}
 
