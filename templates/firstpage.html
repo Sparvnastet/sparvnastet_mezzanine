@@ -19,6 +19,7 @@
 {% block right_panel %}
     {% if about %}
     <h4>{{ about.title }}</h4>
+    <p><img src="/static/img/sparrow_01.png" /></p>
     {{ about.description|richtext_filter|safe }}
     {% endif %}
 {% endblock %}
