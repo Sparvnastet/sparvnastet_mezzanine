@@ -1,0 +1,25 @@
+{% extends "admin_copies/change_form.html" %}
+
+{% block extrahead %}{{ block.super }}
+	<script type="text/javascript" src="{{STATIC_URL}}redactor/redactor/redactor.min.js"></script>
+	<!--- <script type="text/javascript" src="{{STATIC_URL}}redactor/redactor_activate.js"></script> --->
+{% endblock %}
+
+{% block extrastyle %}{{ block.super }}
+	<link rel="stylesheet" href="{{STATIC_URL}}redactor/redactor/css/redactor.css" type="text/css" media="screen" />
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+	{% if USE_REDACTOR %}
+	<script type="text/javascript">
+	$(document).ready(
+		function()
+		{
+			//$('#redactor_content').redactor();
+			$('textarea').redactor();
+		}
+	);
+	</script>
+	{% endif %}
+{% endblock %}

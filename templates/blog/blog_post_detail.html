@@ -13,7 +13,7 @@
 {% endmetablock %}{% endblock %}
 
 {% block title %}
-{% editable blog_post.title %}{{ blog_post.title }}{% endeditable %}
+
 {% endblock %}
 
 {% block breadcrumb_menu %}
@@ -30,23 +30,14 @@
 
 {% block main %}
 	<div id="firstpage-padded">
-<h6>
-    {{ blog_post.publish_date }}
-</h6>
-{% comment %}
-<p>
-    {% if blog_post.allow_comments %}(<a href="#comments">{% spaceless %}
-        {% blocktrans count blog_post.comments_count as comments_count %}
-        1 comment
-        {% plural %}
-        {{ comments_count }} comments
-        {% endblocktrans %}
-    {% endspaceless %}</a>){% endif %}
-</p>
-{% endcomment %}
+
+	<h1>{% editable blog_post.title %}{{ blog_post.title }}{% endeditable %}</h1>
+
+	<h6>{{ blog_post.publish_date|date:"Y-m-d" }}</h6>
+
 
 	{% if blog_post.featured_image %}
-	<p><img src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}"></p>
+		<p><img src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}"></p>
 	{% endif %}
 
 	{% editable blog_post.content %}
@@ -63,12 +54,13 @@
 	</ul>
 	{% endif %}
 
-	{% rating_for blog_post %}
+	{#% rating_for blog_post %#}
 
 	{% set_short_url_for blog_post %}
 	<a class="btn small primary share-twitter" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}">{% trans "Share on Twitter" %}</a>
 	<a class="btn small primary share-facebook" target="_blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&amp;t={{ blog_post.title|urlencode }}">{% trans "Share on Facebook" %}</a>
 
 	{% if blog_post.allow_comments %}{% comments_for blog_post %}{% endif %}
+
 	</div>
 {% endblock %}
