@@ -13,11 +13,5 @@ class Firstpage(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(Firstpage, self).get_context_data(**kwargs)
         context['blog_post'] = BlogPost.objects.get(pk=1)
-        try:
-            context['about'] = Page.objects.get(slug='sparvnastet')
-            print context['about']
-            print dir(context['about'])
-        except Page.DoesNotExist:
-            pass
         return context
   

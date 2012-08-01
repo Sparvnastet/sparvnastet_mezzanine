@@ -8,7 +8,7 @@ h6 a {color:#666;}
 .right h6 {margin-top:10px;}
 .panel {
     background:rgba(220,220,220, 0.1); padding:10px 20px; margin-bottom:20px;
-    line-height:170%; border:1px solid #eee; border-radius:5px;}
+    line-height:170%; /* border:1px solid #eee; border-radius:5px; */}
 .middle{
     padding: 10px 0 0 0;
 }

@@ -3,17 +3,28 @@
 {% block main %}
 
     <div id="firstpage-padded">
-    <h2>{{ blog_post.title }}</h2>
-    <hr/>
-    {% if blog_post.featured_image %}
-        <p><img src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}"></p>
-    {% endif %}
 
-    {% editable blog_post.content %}
-    {{ blog_post.content|richtext_filter|safe }}
-    {% endeditable %}
-    </div>
+	{% blog_recent_posts 5 as recent_posts %}
+	{% if recent_posts %}
 
+		{% for blog_post in recent_posts %}
+			<div class="general-information">
+				<h1><a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a></h1>
+				<time datetime="{{ blog_post.publish_date|date:"c" }}">{{ blog_post.publish_date|date:"H:i" }} // {{ blog_post.publish_date|date:"d M"|lower }}</time>
+				{% editable blog_post.content %}
+				{{ blog_post.content|safe }}
+				{% endeditable %}
+			</div>
+
+			<div class="comments">
+			</div>
+
+			<div class="share">
+			</div>
+		{% endfor %}
+	{% endif %}
+
+	</div>
 {% endblock %}
 
 {% block right_panel %}
@@ -27,4 +38,5 @@
 		<hr/>
 	{% endfor %}
 {% endblock %}
+
 
