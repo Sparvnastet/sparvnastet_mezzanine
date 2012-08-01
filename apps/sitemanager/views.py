@@ -8,10 +8,4 @@ class Firstpage(TemplateView):
     """ Just a simple first page, displays recent blog posts
         and PuffText in the right sidebar
     """
-
     template_name = 'firstpage.html'
-    def get_context_data(self, **kwargs):
-        context = super(Firstpage, self).get_context_data(**kwargs)
-        context['blog_post'] = BlogPost.objects.get(pk=1)
-        return context
-  
