@@ -50,6 +50,7 @@
 </ul>
 {% endif %}
 
+{% comment %}
 {% blog_authors as authors %}
 {% if authors %}
 <h3>{% trans "Authors" %}</h3>
@@ -61,6 +62,7 @@
 {% endfor %}
 </ul>
 {% endif %}
+{% endcomment %}
 
 <h3>{% trans "Feeds" %}</h3>
 <a href="{% url blog_post_feed "rss" %}">{% trans "RSS" %}</a> /
