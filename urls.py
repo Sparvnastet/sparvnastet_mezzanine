@@ -3,7 +3,7 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 
 from mezzanine.core.views import direct_to_template
-from apps.pages.views import Firstpage
+from apps.sitemanager.views import Firstpage
 
 
 admin.autodiscover()

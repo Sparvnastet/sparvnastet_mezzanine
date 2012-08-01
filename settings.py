@@ -242,7 +242,7 @@ INSTALLED_APPS = (
     #"mezzanine.twitter",
     #"mezzanine.mobile",
 
-    "apps.pages",
+    "apps.sitemanager",
 )
 
 # List of processors used by RequestContext to populate the context.

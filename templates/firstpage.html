@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n blog_tags mezzanine_tags pages_tags %}
+{% load i18n blog_tags mezzanine_tags pages_tags sparrow_tags %}
 {% block main %}
 
     <div id="firstpage-padded">
@@ -17,10 +17,14 @@
 {% endblock %}
 
 {% block right_panel %}
-    {% if about %}
-    <h4>{{ about.title }}</h4>
-    <p><img src="/static/img/sparrow_01.png" /></p>
-    {{ about.description|richtext_filter|safe }}
-    {% endif %}
+	{# load puff texts through template tag #}
+	{% pufftext %}
+
+	{% for puff in puff_texts %}
+		<h4>{{ puff.title }}</h4>
+		<p><img src="{{ MEDIA_URL }}/{{ puff.image }}" /></p>
+		<p>{{ puff.content|safe }}</p>
+		<hr/>
+	{% endfor %}
 {% endblock %}
 
