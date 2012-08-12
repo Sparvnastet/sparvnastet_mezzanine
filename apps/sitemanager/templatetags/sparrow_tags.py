@@ -9,8 +9,12 @@ def pufftext(context):
     return ''
 
 @register.simple_tag(takes_context=True)
-def linkroll(context):
+def linkroll(context, sorting='order'):
+
+    if sorting is 'name':
+        sorting = 'name'
+
     context.update(
-        {'link_roll' : LinkRoll.objects.filter(published=True).order_by('order')})
+        {'link_roll' : LinkRoll.objects.filter(published=True).order_by(sorting)})
     return ''
 
