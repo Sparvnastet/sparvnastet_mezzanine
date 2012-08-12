@@ -68,3 +68,17 @@ h1,h2,h3,h4 {
     z-index: -1;
 
 }
+
+ul.link-roll{
+    margin-left: 0;
+    margin-bottom: 32px;
+}
+    ul.link-roll h4{
+        margin-bottom: 24px;
+    }
+    ul.link-roll p{
+        line-height: 0.6em;
+    }
+    ul.link-roll li{
+        list-style-type: none;
+    }

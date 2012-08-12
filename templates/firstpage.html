@@ -37,6 +37,19 @@
 		<p>{{ puff.content|safe }}</p>
 		<hr/>
 	{% endfor %}
+
+	{# load link roll #}
+	{% linkroll %}
+
+	<ul class="link-roll">
+	<h4>Comrades</h4>
+	{% for link in link_roll %}
+		<li>
+			<p><a href="{{ link.url }}">{{ link.name }}</a></p>
+{#			<p>{{ link.description }}</p>#}
+		</li>
+	{% endfor %}
+	</ul>
 {% endblock %}
 
 
